@@ -1,5 +1,5 @@
 const Home = () => {
-  return <>initialize</>
+  return <>Ho0me</>
 }
 
 export default Home
