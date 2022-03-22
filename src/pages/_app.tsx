@@ -1,5 +1,6 @@
 import type { AppProps } from 'next/app'
 import Head from 'next/head'
+import Header from '../components/Header'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -12,6 +13,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         />
         <title>온라인 스터디룸</title>
       </Head>
+      <Header isLogin={true} />
       <Component {...pageProps} />
     </>
   )
