@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import { services } from 'constants/serivces.constant'
 
-import styles from 'styles/header.module.scss'
+import styles from 'styles/components/header.module.scss'
 
 interface Props {
   isLogin: boolean

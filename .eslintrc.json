@@ -1,5 +1,8 @@
 {
-  "plugins": ["@typescript-eslint", "prettier"],
+  "plugins": [
+    "@typescript-eslint",
+    "prettier"
+  ],
   "extends": [
     "next/core-web-vitals",
     "plugin:@typescript-eslint/eslint-recommended",
@@ -20,7 +23,10 @@
       "version": "detect"
     }
   },
-  "ignorePatterns": ["node_modules/", ".next/*"],
+  "ignorePatterns": [
+    "node_modules/",
+    ".next/*"
+  ],
   "rules": {
     "react/react-in-jsx-scope": 0,
     "react/prefer-stateless-function": 0,
@@ -37,7 +43,10 @@
         "useTabs": false
       }
     ],
-    "indent": ["error", 2],
+    "indent": [
+      "error",
+      2
+    ],
     "@typescript-eslint/no-empty-interface": "off",
     "no-empty-interface": "off"
   },
