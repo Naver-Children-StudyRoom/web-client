@@ -1,7 +1,60 @@
 .main {
-  .service_introduction {
-    width: 100%;
-    height: 2000px;
-    background-color: yellow;
+  .main_image {
+    position: relative;
+    width: 100vw;
+    height: 60vw;
+    background-image: url("../../../resources/Main/mainImage.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+
+    .service_name {
+      position: absolute;
+      left: 100px;
+      top: 600px;
+      font-size: 40px;
+      font-family: 'Black Han Sans', sans-serif;
+      color: white;
+    }
+
+    .service_introduction {
+      position: absolute;
+      left: 100px;
+      top: 670px;
+      font-size: 20px;
+      font-family: 'Do Hyeon', sans-serif;
+      color: white;
+      line-height: 1.7;
+    }
+  }
+
+  .section_wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 100px;
+    width: 100vw;
+
+    .section_text {
+      font-size: 20px;
+      line-height: 2;
+      font-family: 'Jua', sans-serif;
+
+      .button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 30px auto;
+        width: 150px;
+        border: 1px solid black;
+        border-radius: 50px;
+        font-size: 15px;
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
   }
 }
