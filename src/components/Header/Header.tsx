@@ -1,7 +1,10 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { services } from 'constants/serivces.constant'
 
-import styles from 'styles/components/header.module.scss'
+import Logo from 'resources/Header/logo.png'
+
+import styles from 'styles/components/Header/header.module.scss'
 
 interface Props {
   isLogin: boolean
@@ -14,7 +17,9 @@ const Header = ({ isLogin }: Props) => {
   return (
     <div className={styles.header}>
       <Link href="/main">
-        <div className={styles.service_name}>서비스 명</div>
+        <div className={styles.service_name}>
+          <Image src={Logo} alt="logo image" />
+        </div>
       </Link>
       <div className={styles.service_list}>
         {isLogin && (
