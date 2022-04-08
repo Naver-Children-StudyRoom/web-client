@@ -31,9 +31,11 @@ const Header = ({ isLogin }: Props) => {
             ))}
           </div>
         )}
-        <div className={styles.login_button} onClick={onClickLogin}>
-          로그인
-        </div>
+        <Link href="/login">
+          <div className={styles.login_button} onClick={onClickLogin}>
+            로그인
+          </div>
+        </Link>
       </div>
     </div>
   )
