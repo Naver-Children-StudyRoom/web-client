@@ -8,7 +8,7 @@ import appleIcon from 'resources/Main/appleIcon.png'
 
 import styles from 'styles/components/Main/main.module.scss'
 
-const Main = () => {
+const LogoutMain = () => {
   const onHandleTutorial = () => {
     console.log('link to tutorial!')
   }
@@ -70,4 +70,4 @@ const Main = () => {
   )
 }
 
-export default Main
+export default LogoutMain

@@ -1,19 +1,17 @@
 import Link from 'next/link'
 import Image from 'next/image'
+import { useDispatch, useSelector } from 'react-redux'
 import { services } from 'constants/serivces.constant'
+import { RootState } from 'redux/reducer'
+import { onHandleLogout } from 'redux/reducer/login'
 
 import Logo from 'resources/Header/logo.png'
 
 import styles from 'styles/components/Header/header.module.scss'
 
-interface Props {
-  isLogin: boolean
-}
-
-const Header = ({ isLogin }: Props) => {
-  const onClickLogin = () => {
-    console.log('log in!')
-  }
+const Header = () => {
+  const isLogin = useSelector((state: RootState) => state.login.isLogin)
+  const dispatch = useDispatch()
   return (
     <div className={styles.header}>
       <Link href="/main">
@@ -31,11 +29,22 @@ const Header = ({ isLogin }: Props) => {
             ))}
           </div>
         )}
-        <Link href="/login">
-          <div className={styles.login_button} onClick={onClickLogin}>
-            로그인
+        {isLogin ? (
+          <div
+            className={styles.login_button}
+            onClick={() => dispatch(onHandleLogout())}
+          >
+            로그아웃
           </div>
-        </Link>
+        ) : (
+          <Link
+            href={{
+              pathname: '/login',
+            }}
+          >
+            <div className={styles.login_button}>로그인</div>
+          </Link>
+        )}
       </div>
     </div>
   )

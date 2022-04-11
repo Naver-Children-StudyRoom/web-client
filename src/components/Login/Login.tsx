@@ -1,5 +1,8 @@
 import Image from 'next/image'
-import { Dispatch, SetStateAction, useState } from 'react'
+import Router from 'next/router'
+import { useState } from 'react'
+import { useDispatch } from 'react-redux'
+import { onHandleLogin } from 'redux/reducer/login'
 
 import ServiceName from 'resources/Login/ServiceName.png'
 import ExclamationMark from 'resources/Login/ExclamationMark.png'
@@ -11,6 +14,8 @@ const Login = () => {
   const [passwordValue, setPasswordValue] = useState<string>('')
   const [warning, setWarning] = useState<boolean>(false)
 
+  const dispatch = useDispatch()
+
   const onChangeId = (str: string) => {
     const emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
     setIdValue(str.replace(/[^a-zA-Z\d@.]/gi, ''))
@@ -19,6 +24,23 @@ const Login = () => {
     } else {
       setWarning(true)
     }
+  }
+
+  const onClickLogin = () => {
+    if (!idValue) {
+      alert('id를 입력 해 주세요')
+      return
+    }
+    if (!passwordValue) {
+      alert('비밀번호를 입력 해 주세요')
+      return
+    }
+    if (warning) {
+      alert('email 형식을 확인 해 주세요')
+      return
+    }
+    dispatch(onHandleLogin())
+    Router.replace('/main')
   }
 
   return (
@@ -56,6 +78,9 @@ const Login = () => {
             placeholder="비밀번호"
             onChange={(e) => setPasswordValue(e.target.value)}
           />
+        </div>
+        <div className={styles.login_button} onClick={onClickLogin}>
+          로그인
         </div>
       </div>
     </div>
