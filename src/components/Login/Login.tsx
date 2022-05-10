@@ -82,6 +82,9 @@ const Login = () => {
         <div className={styles.login_button} onClick={onClickLogin}>
           로그인
         </div>
+        <div className={styles.login_function}>
+          <span>비밀번호 찾기</span> | <span>아이디 찾기</span> | <span>회원가입</span>
+        </div>
       </div>
     </div>
   )

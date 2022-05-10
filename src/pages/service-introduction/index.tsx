@@ -1,5 +1,9 @@
+import LogoutMain from "components/Main/LogoutMain"
+
 const index = () => {
-  return <div>service introduction home</div>
+  return (
+    <LogoutMain />
+  )
 }
 
 export default index

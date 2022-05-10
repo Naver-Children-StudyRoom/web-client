@@ -6,7 +6,7 @@ import calendar from 'resources/Main/calendar.png'
 import mobileApplication from 'resources/Main/mobileImage.png'
 import appleIcon from 'resources/Main/appleIcon.png'
 
-import styles from 'styles/components/Main/main.module.scss'
+import styles from 'styles/components/Main/logout_main.module.scss'
 
 const LogoutMain = () => {
   const onHandleTutorial = () => {
